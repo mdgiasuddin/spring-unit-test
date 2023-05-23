@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  postgresql_db_unit_test:
+    image: "postgres:14"
+    restart: always
+    ports:
+      - "5438:5432"
+    volumes:
+      - postgres_db_data_unit_test:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: app_unit_test_db
+      POSTGRES_USER: user_giash
+      POSTGRES_PASSWORD: nE5kMc7JCGNqwDQM
+volumes:
+  postgres_db_data_unit_test:
